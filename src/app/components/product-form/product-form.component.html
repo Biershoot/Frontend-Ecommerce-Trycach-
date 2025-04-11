@@ -1,0 +1,15 @@
+<h2>{{ isEdit ? 'Editar producto' : 'Crear nuevo producto' }}</h2>
+
+<form (ngSubmit)="onSubmit()" #productForm="ngForm">
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="product.name" name="name" required />
+
+  <label>Descripción:</label>
+  <input type="text" [(ngModel)]="product.description" name="description" required />
+
+  <label>Precio:</label>
+  <input type="number" [(ngModel)]="product.price" name="price" required />
+
+  <button type="submit">{{ isEdit ? 'Actualizar' : 'Crear' }}</button>
+</form>
+

@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-center">🛒 Catálogo de Productos</h2>
+    <a routerLink="/create" class="btn btn-primary">➕ Crear nuevo producto</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card mb-4 shadow-sm">
+        <img [src]="product.imageUrl || 'https://via.placeholder.com/300x200'" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p><strong>Precio:</strong> {{ product.price | currency:'COP' }}</p>
+          <p><strong>Stock:</strong> {{ product.stock }}</p>
+          <a [routerLink]="['/edit', product.id]" class="btn btn-outline-secondary btn-sm">✏️ Editar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
