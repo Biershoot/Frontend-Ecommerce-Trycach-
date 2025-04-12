@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
+
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
